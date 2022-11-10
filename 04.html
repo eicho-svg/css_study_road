@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>auto-fit与auto-fill的区别</title>
+    <style>
+        .grid,
+        .grid2 {
+            font-size: 25px;
+            color: white;
+            text-align: center;
+            display: grid;
+            width: 180em;
+            align-content: center;
+            margin: 10px;
+        }
+        
+        .grid {
+            grid-template-columns: repeat(auto-fit, 20em);
+        }
+        /* 需要设置align-content,justify-content的属性值后，才可看到栅格元素被剔除的效果 */
+        
+        .grid2 {
+            grid-template-columns: repeat(auto-fill, 20em);
+        }
+        
+        .one {
+            background-color: green;
+        }
+        
+        .two {
+            background-color: red;
+        }
+        
+        .three {
+            background-color: pink;
+        }
+        
+        .four {
+            background-color: gainsboro;
+        }
+        
+        .five {
+            background-color: burlywood;
+        }
+    </style>
+</head>
+
+<body>
+    <p>在固定的列旁边自动填充列</p>
+    <div class="grid">
+        <div class="one">1</div>
+        <div class="two"></div>
+        <div class="three"></div>
+        <div class="four">4</div>
+        <div class="five">5</div>
+    </div>
+    <div class="grid2">
+        <div class="one">1</div>
+        <div class="two"></div>
+        <div class="three"></div>
+        <div class="four">4</div>
+        <div class="five">5</div>
+    </div>
+</body>
+
+</html>

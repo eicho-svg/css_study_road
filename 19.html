@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分层和排序</title>
+    <style>
+        #grid {
+            display: grid;
+            width: 80%;
+            height: 20em;
+            grid-template-rows: repeat(10, 1fr);
+            grid-template-columns: repeat(10, 1fr);
+            color: white;
+            text-align: center;
+        }
+        
+        .box01 {
+            grid-row: 1/span 4;
+            grid-column: 1/span 4;
+            background-color: red;
+        }
+        
+        .box02 {
+            grid-row: 4/span 4;
+            grid-column: 4/span 4;
+            background-color: orange;
+        }
+        
+        .box03 {
+            grid-row: 7/spa 4;
+            grid-column: 7/span 4;
+            background-color: green;
+        }
+        
+        .box04 {
+            grid-row: 4/span 7;
+            grid-column: 3/span 2;
+            background-color: blue;
+        }
+        
+        .box05 {
+            grid-row: 2/span 3;
+            grid-column: 4/span 5;
+            background-color: yellow;
+        }
+        
+        .top {
+            order: 10;
+        }
+    </style>
+
+</head>
+
+<body>
+    <p>在默认情况下，栅格元素湜按照在源码中的顺序叠放，可以使用order属性，更改栅格元素在方档源码中的叠放顺序</p>
+    <p>以下是两组对照图</p>
+    <div id="grid">
+        <div class="box01">box01</div>
+        <div class="box02">box02</div>
+        <div class="box03">box03</div>
+        <div class="box04">box04</div>
+        <div class="box05">box05</div>
+    </div>
+    <div id="grid">
+        <div class="box01">box01</div>
+        <div class="box02 top">box02</div>
+        <div class="box03">box03</div>
+        <div class="box04">box04</div>
+        <div class="box05">box05</div>
+    </div>
+</body>
+
+</html>

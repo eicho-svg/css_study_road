@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动增加栅格线</title>
+    <style>
+        .grid,
+        .grid2,
+        .grid3,
+        .grid4 {
+            display: grid;
+            grid-template-rows: 80px 80px;
+            grid-template-columns: 80px 80px;
+            color: white;
+            font-size: 25px;
+            text-align: center;
+            margin: 10px;
+        }
+        
+        .grid3,
+        .grid4 {
+            grid-auto-flow: column;
+        }
+        
+        .grid2 {
+            grid-auto-rows: 80px;
+        }
+        
+        .grid4 {
+            grid-auto-columns: 80px;
+        }
+        
+        .one {
+            background-color: red;
+        }
+        
+        .two {
+            background-color: purple;
+        }
+        
+        .three {
+            background-color: green;
+        }
+        
+        .four {
+            background-color: orange;
+        }
+        
+        .five {
+            background-color: blue;
+        }
+        
+        .six {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <p>我们知道的，当栅格元素超出边界时，会根据布局需求增加所需的行或列，但在默认情况下，自动增加的行或列是所需的最小尺寸，而使用grid-auto-rows和grid-auto-column属性可以设定自动创建行或列时的尺寸</p>
+    <p>以下是行的对比图</p>
+    <div class="grid">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+        <div class="four">4</div>
+        <div class="five">5</div>
+        <div class="six">6</div>
+    </div>
+    <div class="grid2">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+        <div class="four">4</div>
+        <div class="five">5</div>
+        <div class="six">6</div>
+    </div>
+    <hr>
+    <p>列对比图(需设置流的方向为列)</p>
+    <div class="grid3">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+        <div class="four">4</div>
+        <div class="five">5</div>
+        <div class="six">6</div>
+    </div>
+    <div class="grid4">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+        <div class="four">4</div>
+        <div class="five">5</div>
+        <div class="six">6</div>
+    </div>
+</body>
+
+</html>

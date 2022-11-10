@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行和列简写属性2</title>
+    <style>
+        #grid {
+            display: grid;
+            grid-template-areas: "header header" "sidebar sidebar" "footer footer";
+            grid-template-rows: auto 1fr auto;
+            height: 100px;
+            grid-template-columns: 25% 75%;
+            text-align: center;
+            color: white;
+            font-size: 25px;
+        }
+        
+        #header {
+            grid-row: header;
+            grid-column: header/header;
+            background-color: orangered;
+        }
+        
+        #footer {
+            grid-row: footer;
+            grid-column: footer-start/footer-end;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <p>通过区域名称或隐式栅格线名称引用栅格线，也能将元素放在正确的位置上，需尽量避免使用相同名称命名的栅格区域和栅格线</p>
+    <p>当以下例子中的header和footer文字不存在时，那么对应的栅格区域也不存在了</p>
+    <div id="grid">
+
+        <div id="header">header</div>
+        <div id="footer">footer</div>
+    </div>
+</body>
+
+</html>

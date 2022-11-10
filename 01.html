@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>栅格布局</title>
+    <style>
+        #grid {
+            display: grid;
+            grid-row: repeat(4, 2em);
+            grid-column: repeat(5, 2em);
+            text-align: center;
+        }
+        
+        #grid div {
+            font-size: 25px;
+            color: white;
+        }
+        
+        .box01 {
+            grid-row-start: 1;
+            grid-column-start: 3;
+            grid-column-end: 5;
+            background-color: red;
+        }
+        
+        .box02 {
+            grid-row-start: 2;
+            grid-column-start: span 2;
+            grid-column-end: 3;
+            background-color: blue;
+        }
+        
+        .box03 {
+            grid-row-start: 3;
+            grid-column-start: 1;
+            grid-column-end: span 5;
+            background-color: orange;
+        }
+        
+        .box04 {
+            grid-row-start: 4;
+            /* span的具体行为是向确定了编号的栅格线的反方向计数 */
+            grid-column-start: span 1;
+            grid-column-end: 5;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="grid">
+        <div class="box01">1</div>
+        <div class="box02">2</div>
+        <div class="box03">3</div>
+        <div class="box04">4</div>
+    </div>
+</body>
+
+</html>

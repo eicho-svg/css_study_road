@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-area的应用</title>
+    <style>
+        #grid {
+            display: grid;
+            grid-template-rows: [r1-start] 1fr [r1-end r2-start] 2fr [r2-end];
+            grid-template-columns: [col-start] 1fr [col-end main-start] 1fr [main-end];
+            text-align: center;
+            color: white;
+            font-size: 25px;
+        }
+        
+        .one {
+            grid-area: r1/main/r1/main;
+            background-color: red;
+        }
+        
+        .two {
+            grid-area: r2-start/col-start/r2-end/main-end;
+            background-color: yellow;
+        }
+        
+        .three {
+            grid-area: 1/1/2/2;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <p>使用grid-area引用栅格线，实现栅格区域简写</p>
+    <div id="grid">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>栅格元素与盒模型</title>
+    <style>
+        .grid {
+            display: grid;
+            grid: repeat(2, 100px)/repeat(2, 200px);
+            color: white;
+        }
+        
+        .box01 {
+            background-color: red;
+        }
+        
+        .box02 {
+            background-color: green;
+            margin: 25px;
+        }
+        
+        .box03 {
+            margin: -25px;
+            background-color: greenyellow;
+        }
+        
+        .box04 {
+            background-color: blue;
+        }
+        
+        .grid2 {
+            display: grid;
+            width: 200px;
+            height: 200px;
+            grid: 200px / 200px;
+            background-color: gray;
+        }
+        
+        .exel {
+            width: 150px;
+            height: 100px;
+            padding: 0;
+            border: 0;
+            margin: 10px;
+            background-color: red;
+            color: white;
+        }
+        
+        .exel2 {
+            background-color: orange;
+            color: white;
+            width: 150px;
+            height: 100px;
+            padding: 0;
+            border: 0;
+            margin: 10px;
+            margin-left: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>所谓盒模型，是被作为栅格元素的盒子,margin设置为正，则盒模型缩小，margin设置为负，则盒模型溢出</p>
+    <p>下图为覆盖效果展示</p>
+    <div class="grid">
+        <div class="box01">1</div>
+        <div class="box02">2</div>
+        <div class="box03">3</div>
+        <div class="box04">4</div>
+    </div>
+    <p>有外边距的栅格元素，即某个尺寸会按照页面的我作页方式作出调整</p>
+    <p>下例所示，两侧各有10像素外边距，width的值为150px，总和为170像素，因此，右外边距需做出让步（针对从左至右书写而言）</p>
+    <div class="grid2">
+        <div class="exel">
+            exel
+        </div>
+    </div>
+    <p>若某个外边距设置为auto，则代表该尺寸可以做出让步 </p>
+    <div class="grid2">
+        <div class="exel2">
+            exel2
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用grid简写创建栅格</title>
+    <style>
+        .grid {
+            display: grid;
+            grid: "header header header header" 3em ". content sidebar ." 1fr "footer footer footer footer" 5em / 2em 3fr minmax(10em, 1fr) 2em;
+            color: white;
+            font-size: 25px;
+            text-align: center;
+        }
+        
+        .header {
+            grid-column: header;
+            grid-row: header;
+            background-color: red;
+        }
+        
+        .content {
+            grid-column: content;
+            grid-row: content;
+            background-color: green;
+        }
+        
+        .sidebar {
+            grid-row: sidebar;
+            grid-column: sidebar;
+            background-color: greenyellow;
+        }
+        
+        .footer {
+            grid-row: footer;
+            grid-column: footer;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <p>使用grid简写创建栅格时，行和列是使用/分开的，同时grid声明一定要放在与栅格有关的其他声明之前</p>
+    <div class="grid">
+        <div class="header">header</div>
+        <div class="content">content</div>
+        <div class="sidebar">sidebar</div>
+        <div class="footer">footer</div>
+    </div>
+</body>
+
+</html>

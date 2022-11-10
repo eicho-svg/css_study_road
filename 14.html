@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>子栅格</title>
+    <style>
+        .grid {
+            display: grid;
+            grid: repeat(auto-fill, 2em)/repeat(10, 1%, 8%, 1%);
+            color: white;
+            text-align: center;
+            font-size: 25px;
+        }
+        
+        .module {
+            display: grid;
+            grid: subgrid;
+        }
+        
+        .one {
+            background-color: red;
+        }
+        
+        .two {
+            background-color: green;
+        }
+        
+        .three {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <p>该语句出问题了，正常情况下，应该是有个模块跨过父元素的三列，而其子元素又根据“主”栅格对齐和排布</p>
+    <div class="grid">
+        <div class="module">
+            <div class="one">one</div>
+            <div class="two">two</div>
+            <div class="three">three</div>
+        </div>
+    </div>
+</body>
+
+</html>

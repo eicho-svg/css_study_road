@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐式栅格</title>
+    <style>
+        #grid {
+            display: grid;
+            grid-template-rows: 2em 2em;
+            grid-template-columns: repeat(6, 4em);
+            text-align: center;
+            color: white;
+            font-size: 25px;
+            border: 1px solid brown;
+        }
+        
+        .box01 {
+            grid-column: 1;
+            grid-row: 1/4;
+            background-color: red;
+        }
+        
+        .box02 {
+            grid-column: 2;
+            grid-row: 3/span 2;
+            background-color: orangered;
+        }
+        
+        .box03 {
+            grid-column: 3;
+            grid-row: span 2/3;
+            background-color: aqua;
+        }
+        
+        .box04 {
+            grid-column: 4;
+            grid-row: span 2/5;
+            background-color: green;
+        }
+        
+        .box05 {
+            grid-column: 5;
+            grid-row: span 4/5;
+            background-color: greenyellow;
+        }
+        
+        .box06 {
+            grid-column: 6;
+            grid-row: -1/span 3;
+            background-color: blue;
+        }
+        
+        .box07 {
+            grid-column: 7;
+            grid-row: span 3/-1;
+            background-color: blueviolet;
+        }
+        
+        #grid2 {
+            display: grid;
+            grid-template-rows: [begin] 2em [middle] 2em [end];
+            grid-template-columns: repeat(5, 5em);
+            text-align: center;
+            color: white;
+            font-size: 25px;
+            background-color: ghostwhite;
+        }
+        
+        .box001 {
+            grid-column: 1;
+            grid-row: 2/span end 2;
+            background-color: aliceblue;
+        }
+        
+        .box002 {
+            grid-column: 2;
+            grid-row: 2/span final;
+            background-color: black;
+        }
+        
+        .box003 {
+            grid-column: 3;
+            grid-row: 1/span 3 middle;
+            background-color: beige;
+        }
+        
+        .box004 {
+            grid-column: 4;
+            grid-row: span begin 2/end;
+            background-color: yellow;
+        }
+        
+        .box005 {
+            grid-column: 5;
+            grid-row: span 2 middle/begin;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <p>隐式栅格即当显示栅格区域不满足栅格元素需求时，浏览器自带的一种改变模式; 记住span的跨度一定是从显示栅格内部开始计数，但是不一定在显示栅格中结束</p>
+    <div id="grid">
+        <div class="box01">1</div>
+        <div class="box02">2</div>
+        <div class="box03">3</div>
+        <div class="box04">4</div>
+        <div class="box05">5</div>
+        <div class="box06">6</div>
+        <div class="box07">7</div>
+    </div>
+    <p>在隐式的基础上加入具名栅格线</p>
+    <div id="grid2">
+        <div class="box001">1</div>
+        <div class="box002">2</div>
+        <div class="box003">3</div>
+        <div class="box004">4</div>
+        <div class="box005">5</div>
+    </div>
+</body>
+
+</html>

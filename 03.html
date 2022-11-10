@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>栅格布局示例3</title>
+    <style>
+        #grid {
+            display: grid;
+            grid-template-areas: "header header header header" "leftside content content rightside" "leftside footer footer footer";
+            color: white;
+            font-size: 25px;
+            text-align: center;
+        }
+        
+        #masthead {
+            grid-row-start: header;
+            grid-column-start: header;
+            grid-column-end: header;
+            background-color: aqua;
+        }
+        
+        #sidebar {
+            grid-row-start: 2;
+            grid-row-end: 4;
+            grid-column-start: leftside/span 1;
+            background-color: pink;
+        }
+        
+        #main {
+            grid-row-start: content;
+            grid-column-start: content;
+            grid-column-end: content;
+            background-color: gray;
+        }
+        
+        #navbar {
+            grid-row-start: rightside;
+            grid-row-end: 3;
+            grid-column-start: rightside;
+            background-color: gold;
+        }
+        
+        #footer {
+            grid-row-start: 3;
+            grid-row-end: span 1;
+            grid-column-start: footer;
+            grid-column-end: footer;
+            background-color: rosybrown;
+        }
+    </style>
+</head>
+
+<body>
+    <p>通过栅格区域隐式创建栅格线名称,请注意目前的栅格区域只能是矩形，以后版本更新会有更改</p>
+    <div id="grid">
+        <div id="masthead">
+            masthead
+        </div>
+        <div id="sidebar">
+            sidebar
+        </div>
+        <div id="main">
+            main
+        </div>
+        <div id="navbar">
+            navbar
+        </div>
+        <div id="footer">
+            footer
+        </div>
+    </div>
+</body>
+
+</html>

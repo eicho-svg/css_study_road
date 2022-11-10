@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>栅格的对齐方式</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-rows: 5em;
+            grid-template-columns: repeat(8, 5em);
+            grid-gap: 5px;
+            grid-auto-rows: 5em;
+        }
+        
+        .grid div {
+            border: 1px solid brown;
+            height: 40px;
+        }
+        
+        .box01 {
+            justify-self: start;
+        }
+        
+        .box02 {
+            justify-self: end;
+        }
+        
+        .box03 {
+            justify-self: center;
+        }
+        
+        .box04 {
+            justify-self: left;
+        }
+        
+        .box05 {
+            justify-self: right;
+        }
+        
+        .box06 {
+            justify-self: self-start;
+        }
+        
+        .box07 {
+            justify-self: self-end;
+        }
+        
+        .box08 {
+            justify-self: stretch;
+        }
+        
+        .box11 {
+            align-self: start;
+        }
+        
+        .box12 {
+            align-self: end;
+        }
+        
+        .box13 {
+            align-self: center;
+        }
+        
+        .box14 {
+            align-self: left;
+        }
+        
+        .box15 {
+            align-self: right;
+        }
+        
+        .box16 {
+            align-self: self-start;
+        }
+        
+        .box17 {
+            align-self: self-end;
+        }
+        
+        .box18 {
+            align-self: stretch;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>主要是有个属性，justify-self和align-self针对的是单个栅格元素，justify-items和align-items针对的是全部栅格元素，justify-content和align-content是针对整个栅格</p>
+    <p>纵向对齐和横向对齐单个元素</p>
+    <p>横向对齐</p>
+    <div class="grid">
+        <div class="box01">start</div>
+        <div class="box02">end</div>
+        <div class="box03">center</div>
+        <div class="box04">left</div>
+        <div class="box05">right</div>
+        <div class="box06">self-start(ltf)</div>
+        <div class="box07">self-end(ltf)</div>
+        <div class="box08">stretch</div>
+    </div>
+    <p>纵向对齐(对于纵向对齐来说，self-start和self-end和start、end的作用是一致的，也就是说书写方向对块级轴上的对齐并没有影响)</p>
+    <div class="grid">
+        <div class="box11">start</div>
+        <div class="box12">end</div>
+        <div class="box13">center</div>
+        <div class="box14">left</div>
+        <div class="box15">right</div>
+        <div class="box16">self-start(ltf)</div>
+        <div class="box17">self-end(ltf)</div>
+        <div class="box18">stretch</div>
+    </div>
+</body>
+
+</html>

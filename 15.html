@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>间距</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-rows: 5em 5em;
+            grid-template-columns: 15% 1fr 1fr;
+            grid-column-gap: 1em;
+        }
+        /* 先行后列 */
+        
+        .gap {
+            grid-gap: 1em 1em;
+        }
+        
+        .grid p {
+            border: 1px solid brown;
+        }
+    </style>
+</head>
+
+<body>
+    <p>间距，即两个栅格轨道之间的间隔，如似将轨道之间的栅格线加粗，让它具有一定的宽度</p>
+    <div class="grid">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+        <p>6</p>
+        <p>7</p>
+        <p>8</p>
+        <p>9</p>
+    </div>
+    <p>行和列皆可设置的属性grid-gap</p>
+    <div class="grid gap">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+        <p>6</p>
+        <p>7</p>
+        <p>8</p>
+        <p>9</p>
+    </div>
+</body>
+
+</html>
